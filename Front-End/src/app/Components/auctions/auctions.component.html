@@ -1,0 +1,255 @@
+<body class="page app  items index">
+            
+
+
+<!------------------------------------------------------------------------------->
+          
+<app-header></app-header>  
+    
+<!------------------------------------------------------------------------------->
+
+    <div class="content">
+        <div class="list list-property"> 
+<div class="container">
+            <form method="GET">
+        <div class="row">
+            <div class="col-lg-3 col-md-5">
+
+                <div id="daterangepicker-inline" class="daterangepicker-inline mb-3">
+                     <input type="text" class="form-control form-control-date-inline" name="date" placeholder="Date" value="">
+                </div>
+
+                <div class="filters">
+
+                    <h5>Search</h5>
+
+                                                
+                        <div class="form-group">
+<input type="text" class="form-control" placeholder="Search Keywords" name="keyword" value="">
+</div>
+    <div class="form-group">
+            <select id="category" name="category" class=" select2  form-control  select2-item-type" data-placeholder="Category" data-allow-clear="1">
+                <option></option>
+            </select>
+    </div>
+        <div class="form-group">
+            <select id="make" name="make" class=" select2  form-control  " data-placeholder="Make" data-allow-clear="1">
+        <option></option>
+        
+                <option value="97" ></option>
+                <option value="127" >-</option>
+                <option value="125" >ALFA</option>
+                <option value="9" >ALFA ROMEO</option>
+                <option value="110" >APRILIA</option>
+                <option value="10" >ASTON MAR</option>
+                <option value="11" >AUDI</option>
+                <option value="112" >ZONGSHEN</option>
+                <option value="119" >ZXAUTO</option>
+            </select>
+        </div>
+<div class="form-group">
+        <select id="model" name="model" class=" select2-ajax  form-control  " data-placeholder="Model"  data-ajax-url="https://bidonline.my/admin/ajax/models"data-ajax-parent="make"data-allow-clear="1" >
+            <option></option>  
+                <option value="849" ></option>
+                <option value="1737" > 207 1.6</option>
+                <option value="352" > INSPIRA 2.0</option>
+                <option value="1348" > IONIQ 1.6</option>
+                <option value="1466" > MYVI 1.3</option>
+                <option value="1216" > SONATA 2.4</option>
+                <option value="326" >t1</option>
+                <option value="329" >x1 005</option>
+                <option value="2607" >– SUMITOMO SH200C1</option>
+        </select>
+</div>
+<div class="form-group">
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">RM</span>
+    </div>
+    <input id="min_price" type="text" class="form-control  " name="min_price" value=""  placeholder="Min Price">
+</div>
+</div>
+<div class="form-group">
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">RM</span>
+    </div>
+    <input id="max_price" type="text" class="form-control  " name="max_price" value=""  placeholder="Max Price">
+</div>
+</div>
+        <div class="form-group">
+                <select id="access" name="access" class=" select2  form-control  "  data-placeholder="Access" data-allow-clear="1">
+                    <option></option>
+                    
+                        <option value="ONSITE" >On-Site</option>
+                        <option value="ONLINE" >On-Line</option>
+                        <option value="BOTH" >Both</option>
+                </select>
+        </div>
+                    
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Search</button>
+            </div>
+        </div>
+
+                                </div>
+            <div class="col-lg-9 col-md-7">
+                <div class="header row">
+                    <div class="col-md-7 col-lg-8">
+                        <h1>Available Vehicles</h1>
+
+                                <p class="subtitle">
+                                    Showing up (count) vehicles
+                                                                    .
+                                </p>
+                    </div>
+                    <div class="filter-group col-md-5 col-lg-4">
+                        <div class="row no-gutters">
+                            <div class="col-12">
+                                <div class="dropdown dropdown-filter">
+                                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sort By Latest Auction Date
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuSort">
+                                        <a class="dropdown-item" href="itemsaa87.html?parents%5B0%5D=CAR&amp;parents%5B1%5D=MACHINE&amp;parents%5B2%5D=MOTORBIKE&amp;sort=lastest_date">Sort By Latest Auction Date</a>
+                                        <a class="dropdown-item" href="items4201.html?parents%5B0%5D=CAR&amp;parents%5B1%5D=MACHINE&amp;parents%5B2%5D=MOTORBIKE&amp;sort=nearest_date">Sort By Nearest Auction Date</a>
+                                        <a class="dropdown-item" href="items2d4b.html?parents%5B0%5D=CAR&amp;parents%5B1%5D=MACHINE&amp;parents%5B2%5D=MOTORBIKE&amp;sort=lowest_price">Sort By Lowest Price</a>
+                                        <a class="dropdown-item" href="items52ef.html?parents%5B0%5D=CAR&amp;parents%5B1%5D=MACHINE&amp;parents%5B2%5D=MOTORBIKE&amp;sort=highest_price">Sort By Highest Price</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+
+            
+                                        
+<!--------------------------------------------------------------------------------------->
+
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" *ngFor="let auction of auctions">
+        <a [routerLink]="['/AuctionDetail']" [queryParams]="{ auctionId:auction.id, auctionMinPrice:auction.minPrice }" class="card card-property">
+            <div class="card-header">
+                <img class="cover" src="assets/images/cover_about.png" />
+            </div>
+            <div class="card-body">         
+                <h5>{{ auction.product.name}}</h5>
+                <p class="address"></p>
+            <div class="built">
+        <span><i class=""> Category:</i>{{ auction.product.category}}</span>
+            </div>
+            <div class="built">
+                <span><i class=""> Name Product:</i>{{ auction.product.name}}</span>
+            </div>
+            <div class="built">
+                <span><i class=""> Min Price:</i>{{ auction.minPrice }}</span>
+            </div>
+                <span><i class=""> End Date:</i>{{ auction.endDate | date }}</span>
+                <hr>                
+            </div>
+        </a>                            
+    </div>
+
+<!--------------------------------------------------------------------------------------->
+        </div>
+    
+
+            </div>
+        </div>
+    </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+<div class="container">
+    <div class="card-columns">
+        <div class="card">
+            <div class="social">
+                <a class="logo-footer" href="#">
+                    <img src="images/logo_bidonline%402x.png" srcset="https://bidonline.my/images/logo_bidonline.png 320w, https://bidonline.my/images/logo_bidonline@2x.png 767w, https://bidonline.my/images/logo_bidonline@3x.png 1200w" alt="Bidonline.my" width="135" />                    </a>
+
+                <div class="social-app">
+                    <a href="https://www.facebook.com/bidonlinemy-281568915983091/" target="_blank">
+                        <img src="images/icon_facebook%402x.png" srcset="https://bidonline.my/images/icon_facebook.png 320w, https://bidonline.my/images/icon_facebook@2x.png 767w, https://bidonline.my/images/icon_facebook@3x.png 1200w" alt="" width="24" />                        </a>
+                    <a href="https://www.instagram.com/bidonline2/" target="_blank">
+                        <img src="images/icon_instagram%402x.png" srcset="https://bidonline.my/images/icon_instagram.png 320w, https://bidonline.my/images/icon_instagram@2x.png 767w, https://bidonline.my/images/icon_instagram@3x.png 1200w" alt="" width="24" />                        </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h5>Bid Online</h5>
+            <ul class="list-unstyled text-small">
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="auctions.html">
+                        Auctions
+                    </a>
+                </li>
+                <li>
+                    <a href="items.html">
+                        Vehicles
+                    </a>
+                </li>
+                <li>
+                    <a href="items/properties.html">
+                        Properties
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <h5>Legal</h5>
+            <ul class="list-unstyled text-small">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions-vehicle.html">Terms &amp; Conditions (Vehicle)</a></li>
+                <li><a href="terms-and-conditions-property.html">Terms &amp; Conditions (Property)</a></li>
+                <li><a href="legal-owners-terms-and-conditions.html">Legal Owners&#39; Terms and Conditions</a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h5>Too Management</h5>
+            <ul class="list-unstyled text-small">
+                <li>
+                    <i class="fad fa-phone-square-alt"></i>
+                    <a class="text-reset" href="tel:+60361378828">+60 3 6137 6188</a>
+                </li>
+                <li>
+                    <i class="fad fa-phone-square-alt"></i>
+                    <a class="text-reset" href="tel:+60361378828">+60 11 3381 8193</a>
+                </li>
+                <li>
+                    <i class="fad fa-envelope"></i>
+                    <a class="text-reset" href="mailto:info@toomanagement.com">info@toomanagement.com</a>
+                </li>
+                <li>
+                    <i class="fad fa-clock"></i>
+                    <span>Mon - Fri, 9:00AM - 5:00PM</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="copyright">Copyright &copy; 2023, All rights reserved  |  by Too Management Holdings Sdn. Bhd.
+        </div>
+    </div>
+</div>
+    </footer>
+ 
+    
+
+</body>

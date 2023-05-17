@@ -1,0 +1,657 @@
+<body class="page app  home">
+
+    <!------------------------------------------------------------------------------->
+          
+      <app-header></app-header>  
+    
+    <!------------------------------------------------------------------------------->
+  
+    <div class="content">
+        <div class="jumbotron">
+  <div class="container">
+    <div class="jumbo-search">
+        <ul class="nav nav-tabs nav-tabs-search">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" data-name="vehicle">
+                    <i class="fad fa-car"></i>Vehicle
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-name="property">
+                    <i class="fad fa-home"></i>Property
+                </a>
+            </li>
+        </ul>
+        <div class="search-content search-vehicle">
+            <h1>Search cars, trucks and more from our vehicle auction</h1>
+            
+            <form method="GET" action="https://bidonline.my/items">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="keyword" placeholder="Search by vehicle name">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <select id="" name="category" 
+  class=" select2  form-control  select2-item-type select2-item-type-vehicle" 
+  data-placeholder="Category"                             data-allow-clear="1"
+            >
+    <option></option>
+    
+  </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <select id="make" name="make" class=" select2  form-control  " data-placeholder="Make" data-allow-clear="1" >
+    <option></option>
+        <option value="97" ></option>
+        <option value="127" >-</option>
+        <option value="125" >ALFA</option>
+        <option value="9" >ALFA ROMEO</option>
+        <option value="110" >APRILIA</option>
+        <option value="177" >YUTONG</option>
+        <option value="112" >ZONGSHEN</option>
+        <option value="119" >ZXAUTO</option>
+  </select>
+    </div>
+        <div class="form-group col-md-2">
+    <select id="model" name="model" class=" select2-ajax  form-control  " data-placeholder="Model" data-ajax-params="{&quot;sort&quot;:&quot;title&quot;}" data-ajax-parent="make" data-allow-clear="1">
+    <option></option>
+        <option value="849" ></option>
+        <option value="1737" > 207 1.6</option>
+        <option value="352" > INSPIRA 2.0</option>
+        <option value="1348" > IONIQ 1.6</option>
+        <option value="1466" > MYVI 1.3</option>
+        <option value="326" >t1</option>
+        <option value="329" >x1 005</option>
+        <option value="2607" >– SUMITOMO SH200C1</option>
+  </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">RM</span>
+                            </div>
+                            <input id="min_price" type="text" class="form-control  " name="min_price" value=""  placeholder="Min Price">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">RM</span>
+                            </div>
+                            <input id="max_price" type="text" class="form-control  " name="max_price" value=""  placeholder="Max Price">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="form-control form-control-date" name="date" placeholder="Date" value="">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <select id="" name="access" class=" select2  form-control  " data-placeholder="Access"   data-allow-clear="1">
+    <option></option>
+        <option value="ONSITE" >On-Site</option>
+        <option value="ONLINE" >On-Line</option>
+        <option value="BOTH" >Both</option>
+  </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button class="btn btn-primary btn-block" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="search-content search-property" style="display: none;">
+            <h1>Find property from our auction</h1>
+            <form method="GET" action="https://bidonline.my/items/properties">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="keyword" placeholder="Search by property name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select id="" name="category" class=" select2  form-control  select2-item-type select2-item-type-property"  data-placeholder="Category" data-allow-clear="1"data-type="property">
+    <option></option>
+    
+  </select>
+                    </div>
+                    <div class="form-group col-md-3">
+<select id="location" name="location" class=" select2  form-control  " data-placeholder="Location" data-allow-clear="1" >
+    <option></option>
+    
+        <option value="Johor" >Johor</option>
+        <option value="Kedah" >Kedah</option>
+        <option value="Kelantan" >Kelantan</option>
+        <option value="Malacca" >Malacca</option>
+        <option value="Pahang" >Pahang</option>
+        <option value="Perak" >Perak</option>
+        <option value="Perlis" >Perlis</option>
+        <option value="Penang" >Penang</option>
+        <option value="Sabah" >Sabah</option>
+        <option value="Sarawak" >Sarawak</option>
+        <option value="Selangor" >Selangor</option>
+        <option value="Terengganu" >Terengganu</option>
+        <option value="Kuala Lumpur" >Kuala Lumpur</option>
+        <option value="Labuan" >Labuan</option>
+        <option value="Putrajaya" >Putrajaya</option>
+  </select>
+            </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">RM</span>
+                            </div>
+                            <input id="min_price" type="text" class="form-control  " name="min_price" value=""  placeholder="Min Price">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">RM</span>
+                            </div>
+                            <input id="max_price" type="text" class="form-control  " name="max_price" value=""  placeholder="Max Price">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="form-control form-control-date" name="date" placeholder="Date" value="">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <select id="" name="access" class=" select2  form-control  " data-placeholder="Access" data-allow-clear="1" >
+    <option></option>
+    
+        <option value="ONSITE" >On-Site</option>
+        <option value="ONLINE" >On-Line</option>
+        <option value="BOTH" >Both</option>
+  </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button class="btn btn-primary btn-block" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="section section-auction">
+  <div class="container">
+    <div class="header header-inline">
+        <h3>Upcoming Auctions</h3>
+        <a href="auctions.html">View More</a>
+    </div>
+    <div class="card-columns">
+                    <a href="auctions/499.html" class="card card-auction"> 
+            <div class="card-header">
+                <div class="card-cover">
+                    <span class="tag">352 Lots</span>
+                                                <img class="cover" src="assets/cdn.bidonline.my/bidonline/142979/conversions/Ad9J9q2SsVT1-thumb.jpg" />
+                        <div class="row no-gutters preview">
+                            <div class="col">
+                                <img src="assets/cdn.bidonline.my/bidonline/137970/conversions/340vT3q7AVBU-thumb.jpg" />
+                            </div>
+                            <div class="col">
+                                <img src="assets/cdn.bidonline.my/bidonline/146940/conversions/IGlFTsfzRKWj-thumb.jpg" />
+                            </div>
+                            <div class="col">
+                                <img src="assets/cdn.bidonline.my/bidonline/118856/conversions/63Qgwj5q7Goc-thumb.jpg" />
+                            </div>
+                        </div>
+                                        </div>
+            </div>
+  
+            <div class="card-body">
+                <h5>AUCTION 150523 SLY</h5>
+                <p class="date">15 May 2023, 3:00 PM</p>
+            </div>
+        </a>
+                    <a href="auctions/500.html" class="card card-auction"> 
+            <div class="card-header">
+                <div class="card-cover">
+                    <span class="tag">0 Lots</span>
+                                                <img class="cover" src="assets/images/placeholder_item.png" />
+                        <div class="row no-gutters preview">
+                            <div class="col">
+                                <img src="assets/images/placeholder_item.png">
+                            </div>
+                            <div class="col">
+                                <img src="assets/images/placeholder_item.png">
+                            </div>
+                            <div class="col">
+                                <img src="assets/images/placeholder_item.png">
+                            </div>
+                        </div>
+                                        </div>
+            </div>
+  
+            <div class="card-body">
+                <h5>AUCTION 220523 SLY</h5>
+                <p class="date">22 May 2023, 3:00 PM</p>
+            </div>
+        </a>
+                    <a href="auctions/501.html" class="card card-auction"> 
+            <div class="card-header">
+                <div class="card-cover">
+                    <span class="tag">0 Lots</span>
+                                                <img class="cover" src="assets/images/placeholder_item.png" />
+                        <div class="row no-gutters preview">
+                            <div class="col">
+                                <img src="assets/images/placeholder_item.png">
+                            </div>
+                            <div class="col">
+                                <img src="assets/images/placeholder_item.png">
+                            </div>
+                            <div class="col">
+                                <img src="assets/images/placeholder_item.png">
+                            </div>
+                        </div>
+                                        </div>
+            </div>
+  
+            <div class="card-body">
+                <h5>AUCTION 290523 SLY</h5>
+                <p class="date">29 May 2023, 3:00 PM</p>
+            </div>
+        </a>
+                    <a href="auctions/472.html" class="card card-auction"> 
+            <div class="card-header">
+                <div class="card-cover">
+                    <span class="tag">1 Lots</span>
+                                                <img class="cover" src="assets/cdn.bidonline.my/bidonline/119762/conversions/tln4rZUTdHVi-thumb.jpg" />
+                        <div class="row no-gutters preview">
+                            <div class="col">
+                                <img src="assets/images/placeholder_property.png" />
+                            </div>
+                            <div class="col">
+                                <img src="assets/images/placeholder_property.png" />
+                            </div>
+                            <div class="col">
+                                <img src="assets/images/placeholder_property.png" />
+                            </div>
+                        </div>
+                                        </div>
+            </div>
+  
+            <div class="card-body">
+                <h5>PROPERTY FOR SALE</h5>
+                <p class="date">29 May 2023, 5:00 PM</p>
+            </div>
+        </a>
+                </div>
+    
+    <div id="ad-billboard" class="carousel slide ad ad-billboard" data-ride="carousel">
+          <div class="carousel-inner ad-billboard-inner">
+                        <div class="carousel-item active">
+                                        <img class="ad-cover ad-billboard-cover" src="assets/bidonline.sgp1.digitaloceanspaces.com/bidonline/134403/1xBcWe1lYZoH.png" alt="AUCTION PREMIUM 2023">
+                                </div>
+                </div>
+  </div>
+  </div>
+  </div>
+  
+  <div class="section section-property">
+  <div class="container">
+    <div class="header header-inline">
+        <div>
+            <h3>Popular Lots</h3>
+            <p class="subtitle">Trending auction lot.</p>
+        </div>
+        <a href="itemsb00e.html?type=POPULAR">View More</a>
+    </div>
+    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/17912.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/119762/conversions/tln4rZUTdHVi-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+    
+        <h5>FOR SALE</h5>
+  <p class="address">Pavilion Embassy, Jalan Ampang, Jalan Ampang, 50450, Kuala Lumpur</p>
+  <div class="built">
+  <span><i class="fad fa-ruler-triangle"></i>1,372 sq. ft.</span>
+  </div>
+  <div class="room">
+  <span class="bedroom">
+    <i class="fad fa-bed"></i>0
+  </span>
+  <span>
+    <i class="fad fa-bath"></i>0
+  </span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">N/A</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>1676</span>
+  </p>
+        </div>
+  </a>                </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/18505.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/145058/conversions/d9xBeA5HOIE3-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>VBJ3626</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>C200-W205A  (Automatic)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>MERCEDES BENZ</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>2018</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">N/A</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>2689</span>
+  </p>
+        </div>
+  </a>                </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/18002.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/121248/conversions/KRePv4C4xAPA-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>WA747K</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>I40 2.0   (Automatic)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>HYUNDAI</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>2014</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">N/A</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>1967</span>
+  </p>
+        </div>
+  </a>                </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/19485.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/137154/conversions/xEYH88wAAUE4-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>BQB1505</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>C200  (Automatic)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>MERCEDES BENZ</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>2019</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">N/A</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>1812</span>
+  </p>
+        </div>
+  </a>                </div>
+                </div>
+  </div>
+  </div>
+  
+  <div class="container">
+  </div>
+  
+  <div class="section section-property">
+  <div class="container">
+    <div class="header header-inline">
+        <div>
+            <h3>Most Recent</h3>
+            <p class="subtitle">Latest lots listed for auction.</p>
+        </div>
+        <a href="itemsfdee.html?type=RECENT">View More</a>
+    </div>
+  
+    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/20707.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/149596/conversions/xuriBPfWEFP4-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>VJK2576</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>135LC  (N/A)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>YAMAHA</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>N/A</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">RM 5,700.00</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>21</span>
+  </p>
+        </div>
+  </a>                </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/20709.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/149648/conversions/JRBeDH39cFQE-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>VHS3575</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>135LC  (N/A)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>YAMAHA</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>N/A</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">RM 4,900.00</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>18</span>
+  </p>
+        </div>
+  </a>                </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/20708.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/cdn.bidonline.my/bidonline/149624/conversions/vGlDl4ICioew-thumb.jpg" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>CEQ4595</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>LEGEND 150  (N/A)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>GPX</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>N/A</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">RM 5,400.00</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>19</span>
+  </p>
+        </div>
+  </a>                </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <a href="items/20714.html" class="card card-property">
+  <div class="card-header">
+    <img class="cover" src="assets/images/placeholder_item.png" />
+        </div>
+  <div class="card-body">
+  
+                
+        <h5>BKJ1882</h5>
+  <p class="address">Too Warehouse Selayang</p>
+  <div class="built">
+  <span><i class="fad fa-car"></i>325I SPORTS E90  (Automatic)</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-industry-alt"></i>BMW</span>
+  </div>
+  <div class="built">
+  <span><i class="fad fa-tools"></i>2009</span>
+  </div>
+  
+  <hr>
+  
+  <p class="price">N/A</p>
+  
+  <p class="eye">
+  <i class="fad fa-eye"></i>
+  <span>36</span>
+  </p>
+        </div>
+  </a>                </div>
+                </div>
+  </div>
+  </div>
+    </div>
+  
+    
+ <!------------------------------------------------------------------------------->
+  
+    <footer>
+        <div class="container">
+          <div class="card-columns">
+              <div class="card">
+                  <div class="social">
+                      <a class="logo-footer" href="#">
+                          <img src="images/logo_bidonline%402x.png" srcset="https://bidonline.my/images/logo_bidonline.png 320w, https://bidonline.my/images/logo_bidonline@2x.png 767w, https://bidonline.my/images/logo_bidonline@3x.png 1200w" alt="Bidonline.my" width="135" />                    </a>
+        
+                      <div class="social-app">
+                          <a href="https://www.facebook.com/bidonlinemy-281568915983091/" target="_blank">
+                              <img src="images/icon_facebook%402x.png" srcset="https://bidonline.my/images/icon_facebook.png 320w, https://bidonline.my/images/icon_facebook@2x.png 767w, https://bidonline.my/images/icon_facebook@3x.png 1200w" alt="" width="24" />                        </a>
+                          <a href="https://www.instagram.com/bidonline2/" target="_blank">
+                              <img src="images/icon_instagram%402x.png" srcset="https://bidonline.my/images/icon_instagram.png 320w, https://bidonline.my/images/icon_instagram@2x.png 767w, https://bidonline.my/images/icon_instagram@3x.png 1200w" alt="" width="24" />                        </a>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div class="card">
+                  <h5>Bid Online</h5>
+                  <ul class="list-unstyled text-small">
+                      <li>
+                          <a href="index.html">
+                              Home
+                          </a>
+                      </li>
+                      <li>
+                          <a href="auctions.html">
+                              Auctions
+                          </a>
+                      </li>
+                      <li>
+                          <a href="items.html">
+                              Vehicles
+                          </a>
+                      </li>
+                      <li>
+                          <a href="items/properties.html">
+                              Properties
+                          </a>
+                      </li>
+                      <li>
+                          <a href="about.html">
+                              About
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="card">
+                  <h5>Legal</h5>
+                  <ul class="list-unstyled text-small">
+                      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                      <li><a href="terms-and-conditions-vehicle.html">Terms &amp; Conditions (Vehicle)</a></li>
+                      <li><a href="terms-and-conditions-property.html">Terms &amp; Conditions (Property)</a></li>
+                      <li><a href="legal-owners-terms-and-conditions.html">Legal Owners&#39; Terms and Conditions</a></li>
+                  </ul>
+              </div>
+              <div class="card">
+                  <h5>Too Management</h5>
+                  <ul class="list-unstyled text-small">
+                      <li>
+                          <i class="fad fa-phone-square-alt"></i>
+                          <a class="text-reset" href="tel:+60361378828">+60 3 6137 6188</a>
+                      </li>
+                      <li>
+                          <i class="fad fa-phone-square-alt"></i>
+                          <a class="text-reset" href="tel:+60361378828">+60 11 3381 8193</a>
+                      </li>
+                      <li>
+                          <i class="fad fa-envelope"></i>
+                          <a class="text-reset" href="mailto:info@toomanagement.com">info@toomanagement.com</a>
+                      </li>
+                      <li>
+                          <i class="fad fa-clock"></i>
+                          <span>Mon - Fri, 9:00AM - 5:00PM</span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <p class="copyright">Copyright &copy; 2023, All rights reserved  |  by Too Management Holdings Sdn. Bhd.
+              </div>
+          </div>
+        </div>
+        </footer>
+    <!------------------------------------------------------------------------------->
+  
+  </body>

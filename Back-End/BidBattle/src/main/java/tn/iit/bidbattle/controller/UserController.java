@@ -7,6 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import tn.iit.bidbattle.adapter.AuctionAdapter;
 import tn.iit.bidbattle.dao.AuctionRepository;
+import tn.iit.bidbattle.dao.BidRepository;
 import tn.iit.bidbattle.dao.UserRepository;
 import tn.iit.bidbattle.dto.AuctionDto;
 import tn.iit.bidbattle.dto.ProductDto;
@@ -15,6 +16,7 @@ import tn.iit.bidbattle.exception.ResourceNotFoundException;
 import tn.iit.bidbattle.model.auction.Auction;
 import tn.iit.bidbattle.model.auction.AuctionDetails;
 import tn.iit.bidbattle.model.auction.AuctionStatus;
+import tn.iit.bidbattle.model.bid.BidDetails;
 import tn.iit.bidbattle.model.user.User;
 
 import java.net.URI;
@@ -29,12 +31,14 @@ public class UserController {
 
     private final UserRepository userRepository;
     private final AuctionRepository auctionRepository;
+    private final BidRepository bidRepository;
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
-    public UserController(UserRepository userRepository, AuctionRepository auctionRepository) {
+    public UserController(UserRepository userRepository, AuctionRepository auctionRepository, BidRepository bidRepository) {
         this.userRepository = userRepository;
         this.auctionRepository = auctionRepository;
+        this.bidRepository = bidRepository;
     }
 
     @PostMapping
@@ -99,6 +103,17 @@ public class UserController {
         return userDto.getAuctions()
                 .stream()
                 .map(AuctionAdapter::toAuctionDetails)
+                .toList();
+    }
+
+    @GetMapping("{userId}/bids")
+    public List<BidDetails> getBids(@PathVariable long userId) {
+        return bidRepository.findByUserId(userId)
+                .stream()
+                .map(bidDto -> BidDetails.builder()
+                        .price(bidDto.getPrice())
+                        .auction(AuctionAdapter.toAuctionDetails(bidDto.getAuction()))
+                        .build())
                 .toList();
     }
 

@@ -26,6 +26,6 @@ public class ProductDto {
     @Column(name = "category")
     private Category category;
 
-//    @Column(name = "reference")
-//    private String reference;
+//    @Column(name = "photo")
+//    private String photo;
 }

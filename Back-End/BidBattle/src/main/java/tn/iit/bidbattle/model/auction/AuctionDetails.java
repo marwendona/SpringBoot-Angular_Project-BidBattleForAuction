@@ -11,6 +11,7 @@ import java.util.Date;
 @Builder
 @Jacksonized
 public class AuctionDetails {
+    private long id;
     private Product product;
     private int minPrice;
     private Date endDate;

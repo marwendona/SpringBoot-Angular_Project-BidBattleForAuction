@@ -13,6 +13,6 @@ public class AuctionAdapter {
         var productDto = auctionDto.getProduct();
         var product = Product.builder().name(productDto.getName()).category(productDto.getCategory()).build();
         var status = auctionDto.getEndDate().after(new Date()) ? AuctionStatus.ACTIVE : AuctionStatus.ENDED;
-        return AuctionDetails.builder().product(product).minPrice(auctionDto.getMinPrice()).endDate(auctionDto.getEndDate()).auctionStatus(status).build();
+        return AuctionDetails.builder().id(auctionDto.getId()).product(product).minPrice(auctionDto.getMinPrice()).endDate(auctionDto.getEndDate()).auctionStatus(status).build();
     }
 }

@@ -1,0 +1,126 @@
+<body class="page app  profil">
+
+  <!------------------------------------------------------------------------------->
+
+  <app-header></app-header>
+
+  <!------------------------------------------------------------------------------->
+<!-- <p>profil works!</p>
+<p>{{user.firstName}}</p>
+<p>{{user.lastName}}</p>
+<p>{{user.email}}</p> -->
+
+<div class="container">
+  <div class="main-body">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
+                class="rounded-circle p-1 bg-primary" width="110">
+              <div class="mt-3">
+                <h4>{{user.firstName}}</h4>
+                <p class="text-secondary mb-1">{{user.lastName}}</p>
+                <p class="text-muted font-size-sm">{{user.email}}</p>
+
+              </div>
+            </div>
+            <hr class="my-4">
+            <div class="form-group">
+              <a class="btn btn-primary btn-block" href="/UpdateUser">Update profile</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        
+        
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="d-flex align-items-center mb-3">Bids</h5>
+                <div class="container">
+                  <div class="col-lg-9 col-md-7">
+                    <div class="row">
+                      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" *ngFor="let bid of bids">
+                        <a [routerLink]="['/', bid.auction.id, 'AuctionDetail']"
+                          [queryParams]="{ auctionId:bid.auction.id, auctionMinPrice:bid.auction.minPrice }"
+                          class="card card-property">
+                          <!-- <div class="card-header">
+                                          <img class="cover" src="assets/images/cover_about.png" />
+                                        </div> -->
+                          <div class="card-body">
+                            <h5>{{ bid.auction.product.name}}</h5>
+                            <p class="address"></p>
+                            <div class="built">
+                              <span><i class=""> Category : </i>{{ bid.auction.product.category}}</span>
+                            </div>
+                            <div class="built">
+                              <span><i class=""> Product name : </i>{{ bid.auction.product.name}}</span>
+                            </div>
+                            <div class="built">
+                              <span><i class=""> Minimum price : </i>{{ bid.auction.minPrice }} TND</span>
+                            </div>
+                            <span><i class=""> End date : </i>{{ bid.auction.endDate | date:'medium' }}</span>
+                            <div class="built">
+                              <span><i class=""> Bid Price : </i>{{ bid.price}}</span>
+                            </div>
+                            <hr>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="d-flex align-items-center mb-3">Auctions</h5>
+
+                <div class="container">
+                  <div class="col-lg-9 col-md-7">
+                    <div class="row">
+                      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" *ngFor="let auction of auctions">
+                        <a [routerLink]="['/', auction.id, 'AuctionDetail']"
+                          [queryParams]="{ auctionId:auction.id, auctionMinPrice:auction.minPrice }"
+                          class="card card-property">
+                          <!-- <div class="card-header">
+                                          <img class="cover" src="assets/images/cover_about.png" />
+                                        </div> -->
+                          <div class="card-body">
+                            <h5>{{ auction.product.name}}</h5>
+                            <p class="address"></p>
+                            <div class="built">
+                              <span><i class=""> Category : </i>{{ auction.product.category}}</span>
+                            </div>
+                            <div class="built">
+                              <span><i class=""> Product name : </i>{{ auction.product.name}}</span>
+                            </div>
+                            <div class="built">
+                              <span><i class=""> Minimum price : </i>{{ auction.minPrice }} TND</span>
+                            </div>
+                            <span><i class=""> End date : </i>{{ auction.endDate | date:'medium' }}</span>
+                            <hr>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

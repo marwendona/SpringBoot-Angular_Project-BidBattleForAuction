@@ -1,48 +1,54 @@
-<body class="page app  login">
-            
+<body class="page app  items index">
+
     <!------------------------------------------------------------------------------->
-            
-    <app-header></app-header>  
-      
-    <!------------------------------------------------------------------------------->      
-      
-  
-      <div class="content">
-          <div class="row no-gutters">
-  <div class="col-md-6">
-      <div class="cover"></div>
-  </div>
-  <div class="col-md-6">
-      <form [formGroup]="form" (ngSubmit)="onsub()">
-          <input type="hidden" name="_token" value="tVzcnTt4Td220axQalqNwy2x99otq8wKQhKBZIzq">
-          
+
+    <app-header></app-header>
+
+    <!------------------------------------------------------------------------------->
+<div class="card">
+    <div class="card-body">
+      <div class="col-md-6">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
           <div class="header">
-              <h1>Welcome Back</h1>
-              <p class="subtitle">Login to your account.</p>
-              <p class="subtitle">Does't have an account? <a href="/Signup">Sign up here</a></p>
+            <h1>Update Account</h1>
+
           </div>
-  
+
           <div class="form-group">
-              <label for="email">Email</label>
-              <input matInput formControlName="email" type="email" id="email" name="email" class="form-control " value="" placeholder="Email" autocomplete="email" required autofocus>
-                          </div>
-          <div class="form-group">
-              <label for="password">Password</label>
-              <input matInput formControlName="password" type="password" id="password" name="password" class="form-control " placeholder="Password" required>
-                      
-         </div>
-  
-     
-       
-          <div class="form-group">
-              <button class="btn btn-primary" type="submit">Log In</button>
+            <label for="first_name">First name</label>
+            <input matInput type="text" id="first_name" name="first_name" class="form-control "
+              formControlName="firstName" placeholder="first_name" required autofocus>
           </div>
-  
-     
-      </form>
-  </div>
-  </div>
+          <div class="form-group">
+            <label for="last_name">Last name</label>
+            <input matInput type="text" id="last_name" name="last_name" class="form-control "
+              formControlName="lastName" placeholder="last_name" required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input matInput type="email" id="email" name="email" class="form-control " formControlName="email"
+              placeholder="Email" required autofocus>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input matInput formControlName="password" type="password" id="password" name="password"
+              class="form-control " placeholder="Password" required>
+          </div>
+
+
+
+          <div class="form-group">
+            <button class="btn btn-primary px-4" type="submit">Update</button>
+          </div>
+
+
+        </form>
       </div>
+
+    </div>
+  </div>
   <!------------------------------------------------------------------------------->
 
   <footer>
@@ -94,4 +100,4 @@
     </div>
 </footer>
 <!------------------------------------------------------------------------------->
-          </body>
+</body>

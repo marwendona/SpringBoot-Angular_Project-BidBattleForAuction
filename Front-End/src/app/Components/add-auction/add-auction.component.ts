@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuctionService } from 'src/app/Services/Auction/auction.service';
 import { Auction } from 'src/app/models/Auction';
+import { AuctionDetails } from 'src/app/models/AuctionDetails';
 
 @Component({
   selector: 'app-add-auction',
@@ -23,19 +24,16 @@ export class AddAuctionComponent  implements OnInit {
   console.log(this.myForm)
 }
   onSubmit() {
-    const newAuction : Auction={
-      id: 10,
+    const newAuction : Auction ={
       product: {
         name: this.myForm.value.name,
         category: this.myForm.value.category
       },
 
       minPrice: this.myForm.value.minPrice,
-      endDate: this.myForm.value.endDate,
-      auctionStatus: this.myForm.value.auctionStatus
-      
+      endDate: this.myForm.value.endDate,      
     };
-    this.auctionService.saveDataA(newAuction).subscribe(()=> {
+    this.auctionService.saveDataA(Number(localStorage.getItem("userId")), newAuction).subscribe(()=> {
       // console.log(response);
       this.router.navigate(['/Auctions']);
       

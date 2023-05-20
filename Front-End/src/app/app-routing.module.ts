@@ -6,15 +6,22 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { AuctionDetailComponent } from './Components/auction-detail/auction-detail.component';
 import { AddAuctionComponent } from './Components/add-auction/add-auction.component';
+import { ProfilComponent } from './Components/profil/profil.component';
+import { UpdateUserComponent } from './Components/update-user/update-user.component';
 
 const routes: Routes = [
+  {
+    path: 'UpdateUser',
+    pathMatch: 'full',
+    component: UpdateUserComponent
+  },
   {
     path: 'AddAuction',
     pathMatch: 'full',
     component: AddAuctionComponent
   },
   {
-    path: 'AuctionDetail',
+    path: ':id/AuctionDetail',
     pathMatch: 'full',
     component: AuctionDetailComponent
   },
@@ -37,6 +44,12 @@ const routes: Routes = [
     path: 'Home',
     pathMatch: 'full',
     component: HomeComponent
+  },
+
+  {
+    path: 'Profile',
+    pathMatch: 'full',
+    component: ProfilComponent
   },
   //--------------Default-------------
 

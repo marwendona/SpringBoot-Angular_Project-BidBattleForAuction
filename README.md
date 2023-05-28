@@ -1,40 +1,35 @@
-#BidBattle - Projet de Vente aux Enchères - Read Me
+# BidBattle - Online Auction Project - Read Me
 
-Ce projet est une application de vente aux enchères en ligne, qui permet aux utilisateurs de s'inscrire, 
-de s'authentifier, de gérer leur profil, de participer aux enchères, de rechercher des produits 
-et d'envoyer des e-mails aux gagnants. La partie back-end est développée en utilisant Spring Boot, 
-tandis que la partie front-end est développée en Angular avec Material Design.
+This project is an online auction application that allows users to register, authenticate, manage their profile, participate in auctions, search for products, and send emails to the winners. The back-end is developed using Spring Boot, while the front-end is developed using Angular with Material Design.
 
 
-#Fonctionnalités principales :
-- Inscription et authentification
-- Gestion de profil
-- Enchères
-- Recherche
-- Envoi d'e-mails au gagnant
+# Key Features:
+- Registration and authentication
+- Profile management
+- Auctions
+- Search
+- Sending emails to the winner
 
 
-#Technologies utilisées :
+# Technologies Used:
 - Back-end: 
-	Spring Boot est utilisé pour le développement de la partie back-end de l'application.
+	Spring Boot is used for developing the back-end part of the application.
 - Front-end: 
-	Angular est utilisé pour développer l'interface utilisateur côté client.
-	Material Design est utilisé pour améliorer l'expérience utilisateur.
+	Angular is used to develop the client-side user interface.
+	Material Design is used to enhance the user experience.
 
 
-#Configuration du projet :
+# Project Setup:
 - Back-end: 
-	1. Installer MySQL
-	2. Assurez-vous d'avoir Java et Spring Boot installés sur votre machine 
-	3. Importez le projet Spring Boot dans votre IDE 
-	4. Configurez les dépendances nécessaires en utilisant Maven 
+	1. Install MySQL
+	2. Make sure you have Java and Spring Boot installed on your machine
+	3. Import the Spring Boot project into your IDE
+	4. Configure the necessary dependencies using Maven
 - Front-end: 
-	1. Assurez-vous d'avoir Node.js et Angular CLI installés sur votre machine 
-	2. Exécutez la commande "npm install" pour installer les dépendances nécessaires 
-	3. Exécutez "ng serve" pour démarrer l'application front-end
+	1. Make sure you have Node.js and Angular CLI installed on your machine
+	2. Run the command "npm install" to install the necessary dependencies
+	3. Run "ng serve" to start the front-end application
 
 
-#Contributions :
-Les contributions au projet sont les bienvenues. Vous pouvez ajouter de nouvelles fonctionnalités, 
-améliorer l'interface utilisateur, corriger des bugs ou effectuer des tests. 
-N'hésitez pas à soumettre vos contributions pour améliorer l'application.
+# Contributions:
+Contributions to the project are welcome. You can add new features, improve the user interface, fix bugs, or perform testing. Feel free to submit your contributions to enhance the application.
